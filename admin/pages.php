@@ -2,10 +2,11 @@
 require __DIR__.'/../inc/bootstrap.php';admin_required();ensure_pages_table();$pages=db()->query('SELECT * FROM pages ORDER BY updated_at DESC')->fetchAll();
 $pageTitle='Sayfalar';$activeMenu='pages';require __DIR__.'/_header.php';
 function page_actions(string $edit,string $view,bool $deletable=false,int $id=0): string {
-    $editIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg>';
-    $viewIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>';
-    $deleteIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="m19 6-1 14H6L5 6"/><path d="M10 11v5M14 11v5"/></svg>';
-    $html='<div class="actions"><a class="icon-btn" href="'.e($edit).'" title="Düzenle" aria-label="Düzenle">'.$editIcon.'</a><a class="icon-btn" href="'.e($view).'" target="_blank" title="Görüntüle" aria-label="Görüntüle">'.$viewIcon.'</a>';
+    $iconSize='width:18px!important;height:18px!important;min-width:18px!important;max-width:18px!important;min-height:18px!important;max-height:18px!important;';
+    $editIcon='<svg width="18" height="18" style="'.$iconSize.'" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg>';
+    $viewIcon='<svg width="18" height="18" style="'.$iconSize.'" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>';
+    $deleteIcon='<svg width="18" height="18" style="'.$iconSize.'" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="m19 6-1 14H6L5 6"/><path d="M10 11v5M14 11v5"/></svg>';
+    $html='<div class="actions"><a class="icon-btn edit" href="'.e($edit).'" title="Düzenle" aria-label="Düzenle">'.$editIcon.'</a><a class="icon-btn view" href="'.e($view).'" target="_blank" title="Görüntüle" aria-label="Görüntüle">'.$viewIcon.'</a>';
     if($deletable)$html.='<form method="post" action="page-delete.php" onsubmit="return confirm(\'Bu sayfa kalıcı olarak silinsin mi?\')"><input type="hidden" name="csrf" value="'.csrf().'"><input type="hidden" name="id" value="'.$id.'"><button class="icon-btn danger" title="Sil" aria-label="Sil">'.$deleteIcon.'</button></form>';
     return $html.'</div>';
 }
