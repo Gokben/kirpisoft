@@ -68,15 +68,15 @@
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo">
-                                    <a href="index.html" class="kirpisoft-logo"><img src="assets/img/logo/kirpisoftware-logo.png" alt="Kirpi software"></a>
+                                    <a href="index.php" class="kirpisoft-logo"><img src="assets/img/logo/kirpisoftware-logo.png" alt="Kirpi software"></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                                     <ul class="navigation">
-                                        <li><a href="index.html">Ana Sayfa</a></li>
-                                        <li><a href="index.html#uygulamalar">Uygulamalar</a></li>
-                                        <li><a href="index.html#ozellikler">Özellikler</a></li>
-                                        <li><a href="index.html#hakkimizda">Hakkımda</a></li>
-                                        <li class="active"><a href="iletisim.html">İletişim</a></li>
+                                        <li><a href="index.php">Ana Sayfa</a></li>
+                                        <li><a href="index.php#uygulamalar">Uygulamalar</a></li>
+                                        <li><a href="index.php#ozellikler">Özellikler</a></li>
+                                        <li><a href="index.php#hakkimizda">Hakkımda</a></li>
+                                        <li class="active"><a href="iletisim.php">İletişim</a></li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action tgmenu__action-seven">
@@ -96,7 +96,7 @@
                             <nav class="tgmobile__menu-box">
                                 <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
                                 <div class="nav-logo">
-                                    <a href="index.html" class="kirpisoft-logo"><img src="assets/img/logo/kirpisoftware-logo.png" alt="Kirpi software"></a>
+                                    <a href="index.php" class="kirpisoft-logo"><img src="assets/img/logo/kirpisoftware-logo.png" alt="Kirpi software"></a>
                                 </div>
                                 <div class="tgmobile__menu-outer"></div>
                                 <div class="social-links">
@@ -169,8 +169,8 @@
                     <div class="col-md-5">
                         <div class="footer__bottom-menu">
                             <ul class="list-wrap">
-                                <li><a href="index.html">Ana Sayfa</a></li>
-                                <li><a href="iletisim.html">İletişim</a></li>
+                                <li><a href="index.php">Ana Sayfa</a></li>
+                                <li><a href="iletisim.php">İletişim</a></li>
                             </ul>
                         </div>
                     </div>

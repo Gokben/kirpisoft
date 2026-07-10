@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="tr">
 
 <head>
@@ -63,15 +63,15 @@
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo">
-                                    <a href="index.html" class="kirpisoft-logo"><img src="assets/img/logo/kirpisoftware-logo.png" alt="Kirpi software"></a>
+                                    <a href="index.php" class="kirpisoft-logo"><img src="assets/img/logo/kirpisoftware-logo.png" alt="Kirpi software"></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                                     <ul class="navigation">
-                                        <li class="active"><a href="index.html">Ana Sayfa</a></li>
+                                        <li class="active"><a href="index.php">Ana Sayfa</a></li>
                                         <li><a href="#uygulamalar">Uygulamalar</a></li>
                                         <li><a href="#ozellikler">Özellikler</a></li>
                                         <li><a href="#hakkimizda">Hakkımda</a></li>
-                                        <li><a href="iletisim.html">İletişim</a></li>
+                                        <li><a href="iletisim.php">İletişim</a></li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action tgmenu__action-seven">
@@ -105,12 +105,12 @@
                                             </a>
                                         </li>
                                         <li class="header-btn">
-                                            <a href="iletisim.html" class="btn">İletişime Geç</a>
+                                            <a href="iletisim.php" class="btn">İletişime Geç</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="mobile-login-btn">
-                                    <a href="iletisim.html"><img src="assets/img/icons/user.svg" alt="" class="injectable"></a>
+                                    <a href="iletisim.php"><img src="assets/img/icons/user.svg" alt="" class="injectable"></a>
                                 </div>
                                 <div class="mobile-nav-toggler"><i class="tg-flaticon-menu-1"></i></div>
                             </nav>
@@ -120,7 +120,7 @@
                             <nav class="tgmobile__menu-box">
                                 <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
                                 <div class="nav-logo">
-                                    <a href="index.html" class="kirpisoft-logo"><img src="assets/img/logo/kirpisoftware-logo.png" alt="Kirpi software"></a>
+                                    <a href="index.php" class="kirpisoft-logo"><img src="assets/img/logo/kirpisoftware-logo.png" alt="Kirpi software"></a>
                                 </div>
                                 <div class="tgmobile__search">
                                     <form action="#">
@@ -449,7 +449,7 @@
                         <span>Kirpisoft Platform</span>
                         <h2>İş süreçlerinizi küçük, pratik ve yönetilebilir modüllerle dijitalleştirin.</h2>
                     </div>
-                    <a href="iletisim.html" class="btn arrow-btn btn-four">İletişime Geç <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+                    <a href="iletisim.php" class="btn arrow-btn btn-four">İletişime Geç <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
                 </div>
             </div>
         </section>
@@ -468,7 +468,7 @@
                     <div class="col-xl-2 col-lg-4 col-md-6">
                         <div class="footer__widget">
                             <div class="logo mb-35">
-                                <a href="index.html" class="kirpisoft-logo"><img src="assets/img/logo/kirpisoftware-logo.png" alt="Kirpi software"></a>
+                                <a href="index.php" class="kirpisoft-logo"><img src="assets/img/logo/kirpisoftware-logo.png" alt="Kirpi software"></a>
                             </div>
                             <div class="footer__content footer__content-two">
                                 <p>Kirpisoft küçük işletme uygulamaları için web ve Android uyumlu yazılım çözümleri geliştirir.</p>
@@ -484,11 +484,11 @@
                             <h4 class="footer__widget-title">Bağlantılar</h4>
                             <div class="footer__link">
                                 <ul class="list-wrap">
-                                    <li><a href="index.html">Ana Sayfa</a></li>
+                                    <li><a href="index.php">Ana Sayfa</a></li>
                                     <li><a href="#uygulamalar">Uygulamalar</a></li>
                                     <li><a href="#ozellikler">Özellikler</a></li>
                                     <li><a href="#hakkimizda">Hakkımda</a></li>
-                                    <li><a href="iletisim.html">İletişim</a></li>
+                                    <li><a href="iletisim.php">İletişim</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -563,8 +563,8 @@
                     <div class="col-md-5">
                         <div class="footer__bottom-menu">
                             <ul class="list-wrap">
-                                <li><a href="iletisim.html">Kullanım Şartları</a></li>
-                                <li><a href="iletisim.html">Gizlilik Politikası</a></li>
+                                <li><a href="iletisim.php">Kullanım Şartları</a></li>
+                                <li><a href="iletisim.php">Gizlilik Politikası</a></li>
                             </ul>
                         </div>
                     </div>

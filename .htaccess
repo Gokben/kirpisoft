@@ -1,6 +1,6 @@
 AddDefaultCharset UTF-8
 AddCharset UTF-8 .html .css .js .json .svg
-DirectoryIndex index.php index.html
+DirectoryIndex index.php
 Options -Indexes
 
 <FilesMatch "^(config\.php|database\.sql|config\.example\.php)$">

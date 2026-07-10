@@ -8,9 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $s=db()->prepare('INSERT INTO messages(name,email,subject,message) VALUES(?,?,?,?)'); $s->execute([$name,$email,$subject,$message]); $notice='<div class="alert alert-success">Mesajınız alındı. Teşekkür ederiz.</div>';
     } else $notice='<div class="alert alert-danger">Lütfen zorunlu alanları doğru doldurun.</div>';
 }
-$html=file_get_contents(__DIR__.'/iletisim.html');
+$html=file_get_contents(__DIR__.'/inc/templates/iletisim.template.php');
 $form='<form class="kirpisoft-contact-form" method="post"><input type="hidden" name="csrf" value="'.csrf().'">';
 $html=str_replace('<form class="kirpisoft-contact-form" action="mailto:bilgi@kirpii.com" method="post" enctype="text/plain">',$notice.$form,$html);
 $html=str_replace(['name="Ad"','name="Email"','name="Konu"','name="Mesaj"'],['name="name" required','name="email" required','name="subject"','name="message" required'],$html);
-$map=['İletişim Bilgileri'=>setting('contact_title','İletişim Bilgileri'),'+90 (543) 548 01 22'=>setting('phone'),'+905435480122'=>setting('phone_link'),'bilgi@kirpii.com'=>setting('email'),'iletisim.html'=>'iletisim.php','index.html'=>'index.php'];
+$map=['İletişim Bilgileri'=>setting('contact_title','İletişim Bilgileri'),'+90 (543) 548 01 22'=>setting('phone'),'+905435480122'=>setting('phone_link'),'bilgi@kirpii.com'=>setting('email')];
 echo str_replace(array_keys($map),array_values($map),$html);
