@@ -33,3 +33,17 @@ function verify_csrf(): void {
 function admin_required(): void {
     if (empty($_SESSION['admin_id'])) { header('Location: login.php'); exit; }
 }
+function ensure_visits_table(): void {
+    db()->exec("CREATE TABLE IF NOT EXISTS visits (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, visitor_id VARCHAR(64) NOT NULL, ip_address VARCHAR(45) NOT NULL, country VARCHAR(100) NOT NULL DEFAULT 'Bilinmiyor', page VARCHAR(255) NOT NULL, user_agent VARCHAR(500) NOT NULL DEFAULT '', visited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, INDEX idx_visited_at (visited_at), INDEX idx_ip_address (ip_address), INDEX idx_country (country)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+}
+function track_visit(string $page): void {
+    try {
+        ensure_visits_table();
+        $visitorId = $_SESSION['visitor_id'] ??= bin2hex(random_bytes(16));
+        $ip = substr((string)($_SERVER['REMOTE_ADDR'] ?? 'Bilinmiyor'), 0, 45);
+        $country = (string)($_SERVER['HTTP_GEOIP_COUNTRY_NAME'] ?? $_SERVER['HTTP_CF_IPCOUNTRY'] ?? $_SERVER['HTTP_X_COUNTRY_CODE'] ?? 'Bilinmiyor');
+        $agent = substr((string)($_SERVER['HTTP_USER_AGENT'] ?? ''), 0, 500);
+        $stmt = db()->prepare('INSERT INTO visits(visitor_id,ip_address,country,page,user_agent) VALUES(?,?,?,?,?)');
+        $stmt->execute([$visitorId, $ip, substr($country, 0, 100), substr($page, 0, 255), $agent]);
+    } catch (Throwable $e) { error_log('Visit tracking failed: '.$e->getMessage()); }
+}

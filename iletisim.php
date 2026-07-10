@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/inc/bootstrap.php';
+track_visit('İletişim');
 $notice = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     verify_csrf();

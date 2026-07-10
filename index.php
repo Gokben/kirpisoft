@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/inc/bootstrap.php';
+track_visit('Ana Sayfa');
 $html = file_get_contents(__DIR__ . '/inc/templates/index.template.php');
 $replacements = [
     'Kirpisoft - Web ve Mobil Mini Uygulamalar Platformu' => setting('site_title','Kirpisoft - Web ve Mobil Mini Uygulamalar Platformu'),
