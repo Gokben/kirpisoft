@@ -2,8 +2,9 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/krpsoftc/public_html/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp iletisim.html $DEPLOYPATH
+    - /bin/cp index.html index.php iletisim.html iletisim.php install.php database.sql config.example.php $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
+    - /bin/rm -rf $DEPLOYPATH/admin $DEPLOYPATH/inc
+    - /bin/cp -R admin inc $DEPLOYPATH
     - /bin/rm -rf $DEPLOYPATH/assets
     - /bin/cp -R assets $DEPLOYPATH
