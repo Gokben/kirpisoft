@@ -224,21 +224,21 @@ a:hover{color:var(--kirpi-orange);}
 .kirpisoft-contact-heading h1{margin-bottom:18px;color:#fff;font-size:48px;line-height:1.1;font-weight:900;text-transform:uppercase;}
 .kirpisoft-contact-heading h1:after{content:"";display:block;width:136px;height:3px;margin:18px auto 0;background:#fff;border-radius:999px;box-shadow:0 0 0 5px rgba(255,255,255,.12);}
 .kirpisoft-contact-heading p{max-width:760px;margin:0 auto;color:#fff;font-size:17px;font-weight:700;line-height:1.7;}
-.kirpisoft-contact-map{position:relative;min-height:720px;background:#0f2f3f;overflow:hidden;}
+.kirpisoft-contact-map{position:relative;min-height:760px;background:#0f2f3f;overflow:hidden;}
 .kirpisoft-contact-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(.78) contrast(.94);}
 .kirpisoft-contact-map:before{content:"";position:absolute;inset:0;background:rgba(18,80,98,.34);pointer-events:none;z-index:1;}
-.kirpisoft-contact-card{position:relative;z-index:2;width:min(430px,calc(100% - 32px));margin-left:auto;margin-right:12%;top:74px;padding:34px 30px;background:rgba(255,255,255,.86);box-shadow:0 18px 48px rgba(0,0,0,.18);backdrop-filter:blur(4px);}
-.kirpisoft-contact-card h2{margin-bottom:18px;color:#29313a;font-size:30px;font-weight:900;}
-.kirpisoft-contact-list{margin-bottom:24px;}
-.kirpisoft-contact-list li{margin-bottom:12px;color:#4a5663;line-height:1.45;}
+.kirpisoft-contact-card{position:relative;z-index:2;width:min(430px,calc(100% - 32px));margin-left:auto;margin-right:12%;top:32px;padding:26px 28px;background:rgba(255,255,255,.86);box-shadow:0 18px 48px rgba(0,0,0,.18);backdrop-filter:blur(4px);}
+.kirpisoft-contact-card h2{margin-bottom:12px;color:#29313a;font-size:28px;font-weight:900;}
+.kirpisoft-contact-list{margin-bottom:18px;}
+.kirpisoft-contact-list li{margin-bottom:9px;color:#4a5663;line-height:1.35;}
 .kirpisoft-contact-list span{display:block;color:#6b7480;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;}
 .kirpisoft-contact-list strong{display:block;color:#303946;font-size:15px;font-weight:800;}
 .kirpisoft-contact-list a{color:#303946;text-decoration:none;}
-.kirpisoft-contact-form{display:grid;gap:14px;}
-.kirpisoft-contact-form input,.kirpisoft-contact-form textarea{width:100%;border:1px solid rgba(18,59,115,.12);border-radius:6px;background:#fff;padding:13px 15px;color:#303946;font-size:15px;font-weight:600;outline:none;}
-.kirpisoft-contact-form textarea{min-height:160px;resize:vertical;}
+.kirpisoft-contact-form{display:grid;gap:11px;}
+.kirpisoft-contact-form input,.kirpisoft-contact-form textarea{width:100%;border:1px solid rgba(18,59,115,.12);border-radius:6px;background:#fff;padding:11px 14px;color:#303946;font-size:15px;font-weight:600;outline:none;}
+.kirpisoft-contact-form textarea{min-height:132px;resize:vertical;}
 .kirpisoft-contact-form input:focus,.kirpisoft-contact-form textarea:focus{border-color:#e98208;box-shadow:0 0 0 3px rgba(233,130,8,.13);}
-.kirpisoft-contact-form .btn{justify-self:start;border-radius:6px;padding:13px 24px;}
+.kirpisoft-contact-form .btn{justify-self:start;border-radius:6px;padding:12px 24px;}
 
 @media(max-width:991px){
   .kirpisoft-contact-map{min-height:auto;padding:420px 0 48px;}
