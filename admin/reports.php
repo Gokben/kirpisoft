@@ -2,6 +2,7 @@
 require __DIR__.'/../inc/bootstrap.php';
 admin_required();
 ensure_visits_table();
+backfill_visit_countries();
 $total=(int)db()->query('SELECT COUNT(*) FROM visits')->fetchColumn();
 $today=(int)db()->query('SELECT COUNT(*) FROM visits WHERE visited_at >= CURDATE()')->fetchColumn();
 $unique=(int)db()->query('SELECT COUNT(DISTINCT ip_address) FROM visits')->fetchColumn();
