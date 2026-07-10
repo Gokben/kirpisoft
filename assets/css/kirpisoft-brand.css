@@ -1,0 +1,219 @@
+:root{
+  --kirpi-orange:#f47a16;
+  --kirpi-orange-dark:#a85129;
+  --kirpi-gold:#d9a33a;
+  --kirpi-brown:#8f4a2d;
+  --kirpi-blue:#1565c0;
+  --kirpi-navy:#161439;
+  --kirpi-light:#fff6ef;
+}
+
+/* Kirpi software marka uygulaması */
+body{color:#30364a;}
+a{transition:.25s ease;}
+a:hover{color:var(--kirpi-orange);}
+.kirpisoft-logo{display:inline-flex!important;align-items:center;text-decoration:none;line-height:1;}
+.kirpisoft-logo img{display:block;width:250px;max-width:100%;height:auto;object-fit:contain;}
+.logo .kirpisoft-logo img{width:255px;}
+.nav-logo .kirpisoft-logo img{width:220px;}
+.footer__area .kirpisoft-logo img{width:230px;filter:none;}
+#preloader .loader-icon img{content:url('../img/logo/kirpisoftware-icon.png');width:72px;height:72px;object-fit:contain;}
+
+.tg-header__style-seven{background:#fff;box-shadow:0 8px 24px rgba(143,74,45,.08);}
+.tgmenu__navbar-wrap ul li a{color:var(--kirpi-navy);font-weight:600;}
+.tgmenu__navbar-wrap ul li.active > a,
+.tgmenu__navbar-wrap ul li:hover > a{color:var(--kirpi-orange)!important;}
+.tgmenu__navbar-wrap ul li.active > a::after,
+.tgmenu__navbar-wrap ul li:hover > a::after{background:var(--kirpi-orange)!important;}
+.tgmenu__categories .dropdown-toggle{color:var(--kirpi-brown);border-color:rgba(244,122,22,.22);}
+.tgmenu__categories .dropdown-toggle i{color:var(--kirpi-orange);}
+.dropdown-menu .dropdown-item:hover{background:var(--kirpi-light);color:var(--kirpi-orange);}
+
+.btn,
+.slider__search-form button,
+.tgmenu__action .btn,
+.header-btn .btn{background:linear-gradient(135deg,var(--kirpi-orange),#ff8b1a)!important;border-color:var(--kirpi-orange)!important;color:#fff!important;box-shadow:0 8px 18px rgba(244,122,22,.24);}
+.btn:hover,
+.slider__search-form button:hover,
+.header-btn .btn:hover{background:linear-gradient(135deg,var(--kirpi-brown),var(--kirpi-orange))!important;border-color:var(--kirpi-brown)!important;color:#fff!important;transform:translateY(-1px);}
+
+.slider__content .sub-title,
+.section__title .sub-title,
+.categories__title-wrap .section__title .sub-title,
+.features__content .sub-title{color:var(--kirpi-orange)!important;letter-spacing:.06em;}
+.slider__content .title span,
+.section__title .title span,
+.title span{color:var(--kirpi-orange)!important;}
+.slider__content .title{color:var(--kirpi-navy);}
+.slider__search{display:none;}
+.slider__bg::before{background:linear-gradient(90deg,rgba(255,246,239,.96) 0%,rgba(255,255,255,.82) 48%,rgba(255,255,255,.58) 100%)!important;}
+.slider__area .swiper-pagination-bullet-active{background:var(--kirpi-orange)!important;}
+.slider__active .swiper-button-next,
+.slider__active .swiper-button-prev{color:var(--kirpi-orange)!important;border-color:rgba(244,122,22,.35)!important;}
+
+.categories__item,
+.features__item,
+.courses__item,
+.blog__post-item,
+.testimonial__item{border-color:rgba(244,122,22,.13)!important;box-shadow:0 10px 30px rgba(143,74,45,.08)!important;}
+.categories__item:hover,
+.features__item:hover,
+.courses__item:hover{border-color:rgba(244,122,22,.45)!important;box-shadow:0 16px 40px rgba(244,122,22,.16)!important;}
+.categories__icon,
+.features__icon,
+.courses__item .icon,
+.fact__item .icon{background:var(--kirpi-light)!important;color:var(--kirpi-orange)!important;}
+.categories__icon i,
+.features__icon i,
+.fact__item .icon i{color:var(--kirpi-orange)!important;}
+
+.choose__area,
+.cta__area,
+.newsletter__area{background:linear-gradient(135deg,var(--kirpi-orange),#ff9a23)!important;}
+.faq__wrap .accordion-button:not(.collapsed){background:var(--kirpi-light)!important;color:var(--kirpi-orange)!important;}
+.footer__area{background:#fff7f1!important;color:#4b3a30;}
+.footer__widget-title{color:var(--kirpi-brown)!important;}
+.footer__content p,
+.footer__newsletter p,
+.copy-right-text p,
+.footer__social-wrap .title{color:#5b4638!important;}
+.footer__content .list-wrap li,
+.footer__content .list-wrap li a,
+.footer__link .list-wrap li a,
+.footer__bottom-menu .list-wrap li a{color:#3f3129!important;}
+.footer__content .list-wrap li a:hover,
+.footer__link .list-wrap li a:hover,
+.footer__bottom-menu .list-wrap li a:hover,
+.footer__contact a:hover{color:var(--kirpi-orange)!important;}
+.footer__social-two li a,
+.footer__social-two li a svg,
+.footer__social-two li a path{color:var(--kirpi-orange)!important;fill:currentColor!important;}
+.footer__social-two li a:hover,
+.footer__social-two li a:hover svg,
+.footer__social-two li a:hover path{color:var(--kirpi-orange-dark)!important;fill:currentColor!important;}
+.footer__bottom-two{background:#fff1e8!important;border-top:1px solid rgba(244,122,22,.18)!important;}
+.copyright__wrapper{border-top:1px solid rgba(244,122,22,.18)!important;}
+.scroll__top{background:var(--kirpi-orange)!important;}
+
+@media (max-width:1199px){.logo .kirpisoft-logo img{width:220px}.tgmenu__wrap{min-height:82px}.mobile-nav-toggler{color:var(--kirpi-orange)!important}}
+@media (max-width:767px){.logo .kirpisoft-logo img{width:185px}.nav-logo .kirpisoft-logo img{width:190px}.slider__content .title{font-size:38px;line-height:1.13}.slider__content{text-align:left}.tg-header__style-seven .container{padding-left:18px;padding-right:18px}}
+@media (max-width:480px){.logo .kirpisoft-logo img{width:165px}.slider__content .title{font-size:31px}.slider__content p{font-size:16px}}
+
+
+/* Slider readability */
+.slider__content .sub-title{color:#F97316!important;}
+.slider__content .title{color:#123B73!important;}
+.slider__content .title span{color:#F97316!important;}
+.slider__content p{color:#2D3748!important;}
+
+/* Kirpisoft slider yeni profesyonel metin tasarımı */
+.slider__bg::before,
+.slider__bg::after,
+.slider__single::before,
+.slider__single::after{
+  display:none!important;
+  opacity:0!important;
+  background:transparent!important;
+  content:none!important;
+}
+.slider__content{
+  max-width:620px;
+  padding:34px 38px 36px;
+  background:rgba(255,255,255,.90);
+  border-left:6px solid var(--kirpi-orange);
+  border-radius:22px;
+  box-shadow:0 18px 45px rgba(18,59,115,.16);
+  backdrop-filter:blur(7px);
+}
+.slider__content .sub-title{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:16px;
+  padding:8px 15px;
+  border-radius:999px;
+  background:rgba(249,115,22,.12);
+  color:#F97316!important;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.slider__content .title{
+  margin-bottom:18px;
+  color:#123B73!important;
+  font-size:56px;
+  line-height:1.08;
+  font-weight:800;
+  letter-spacing:-1.4px;
+}
+.slider__content .title span{
+  display:block;
+  color:#F97316!important;
+}
+.slider__content .title img,
+.slider__content .title svg{
+  display:none!important;
+}
+.slider__content p{
+  max-width:540px;
+  margin-bottom:0;
+  color:#2D3748!important;
+  font-size:18px;
+  line-height:1.72;
+  font-weight:500;
+}
+.slider__search{display:none!important;}
+.slider__active .swiper-button-next,
+.slider__active .swiper-button-prev{
+  background:#fff!important;
+  box-shadow:0 10px 25px rgba(18,59,115,.12);
+}
+
+@media (max-width:991px){
+  .slider__content{max-width:560px;padding:28px 30px;}
+  .slider__content .title{font-size:44px;}
+  .slider__content p{font-size:17px;}
+}
+@media (max-width:767px){
+  .slider__content{padding:24px 22px;border-radius:18px;}
+  .slider__content .title{font-size:34px;letter-spacing:-.6px;}
+  .slider__content p{font-size:16px;line-height:1.6;}
+  .slider__content .sub-title{font-size:12px;padding:7px 12px;}
+}
+
+/* Kirpisoft clean homepage sections */
+.kirpisoft-modules-area{background:#f8fbff;}
+.kirpisoft-modules-area .section__title .sub-title{font-size:18px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;}
+.kirpisoft-modules-area .section__title{max-width:900px;margin-left:auto;margin-right:auto;padding-left:16px;padding-right:16px;overflow:visible;}
+.kirpisoft-modules-area .section__title .title{font-size:clamp(28px,4vw,44px);line-height:1.18;letter-spacing:0;text-transform:none;overflow-wrap:normal;word-break:normal;hyphens:none;}
+.kirpisoft-modules-area .section__title p{max-width:760px;margin:14px auto 0;color:#526174;font-weight:500;line-height:1.7;}
+.kirpisoft-card{height:100%;padding:34px 30px;border-radius:24px;background:#fff;border:1px solid rgba(18,59,115,.08);box-shadow:0 18px 45px rgba(18,59,115,.08);transition:.25s ease;}
+.kirpisoft-card:hover{transform:translateY(-6px);border-color:rgba(249,115,22,.35);box-shadow:0 22px 55px rgba(249,115,22,.14);}
+.kirpisoft-card__icon{width:72px;height:72px;border-radius:20px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;background:rgba(249,115,22,.12);color:#F97316;font-size:34px;}
+.kirpisoft-card h3{margin-bottom:12px;color:#123B73;font-size:24px;font-weight:800;}
+.kirpisoft-card p{margin-bottom:0;color:#526174;line-height:1.72;font-weight:500;}
+.kirpisoft-about-area{background:#f8fbff;}
+.kirpisoft-about-box{padding:54px;border-radius:30px;background:linear-gradient(135deg,#123B73,#0B2447);color:#fff;overflow:hidden;position:relative;}
+.kirpisoft-about-box:after{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;border-radius:50%;background:rgba(249,115,22,.22);}
+.kirpisoft-about-box .sub-title{color:#F97316;background:rgba(255,255,255,.08);padding:8px 14px;border-radius:999px;display:inline-flex;margin-bottom:18px;font-weight:800;}
+.kirpisoft-about-box h2{color:#fff;font-size:38px;line-height:1.2;margin-bottom:18px;}
+.kirpisoft-about-box p{color:rgba(255,255,255,.84);font-size:17px;line-height:1.75;margin-bottom:0;}
+.kirpisoft-about-detail{margin-top:28px;}
+.kirpisoft-about-card{height:100%;padding:28px;border-radius:22px;background:#fff;border:1px solid rgba(18,59,115,.08);box-shadow:0 16px 38px rgba(18,59,115,.07);}
+.kirpisoft-about-card span{display:inline-flex;margin-bottom:14px;color:#F97316;font-weight:900;letter-spacing:.08em;}
+.kirpisoft-about-card h3{margin-bottom:10px;color:#123B73;font-size:22px;font-weight:800;}
+.kirpisoft-about-card p{margin-bottom:0;color:#526174;font-size:16px;line-height:1.72;font-weight:500;}
+.kirpisoft-about-text{margin-top:28px;padding:34px 38px;border-radius:24px;background:#fff;border-left:5px solid #F97316;box-shadow:0 16px 38px rgba(18,59,115,.07);}
+.kirpisoft-about-text p{margin-bottom:16px;color:#405066;font-size:17px;line-height:1.85;font-weight:500;}
+.kirpisoft-about-text p:last-child{margin-bottom:0;}
+.kirpisoft-check-list li{position:relative;padding-left:32px;margin-bottom:16px;color:#fff;font-weight:700;}
+.kirpisoft-check-list li:before{content:"✓";position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:#F97316;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;}
+.kirpisoft-cta-area{background:#f8fbff;}
+.kirpisoft-cta-box{padding:42px 46px;border-radius:28px;background:#fff;border:1px solid rgba(18,59,115,.08);box-shadow:0 18px 45px rgba(18,59,115,.08);display:flex;align-items:center;justify-content:space-between;gap:30px;}
+.kirpisoft-cta-box span{display:block;color:#F97316;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;}
+.kirpisoft-cta-box h2{max-width:780px;color:#123B73;font-size:34px;line-height:1.25;margin:0;}
+.kirpisoft-cta-box .btn{white-space:nowrap;background:#F97316;border-color:#F97316;color:#fff;}
+.footer__newsletter-form button{background:#F97316!important;border-color:#F97316!important;}
+@media(max-width:991px){.kirpisoft-about-box{padding:38px 28px}.kirpisoft-about-box h2{font-size:30px}.kirpisoft-cta-box{align-items:flex-start;flex-direction:column}.kirpisoft-cta-box h2{font-size:28px}}
+@media(max-width:767px){.kirpisoft-modules-area .section__title{padding-left:20px;padding-right:20px}.kirpisoft-modules-area .section__title .title{font-size:28px;line-height:1.25}.kirpisoft-card,.kirpisoft-about-card{padding:28px 24px}.kirpisoft-about-text{padding:28px 24px}.kirpisoft-cta-box{padding:32px 24px}.kirpisoft-cta-box h2{font-size:24px}}
