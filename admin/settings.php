@@ -1,0 +1,6 @@
+<?php
+require __DIR__.'/../inc/bootstrap.php'; admin_required();
+$fields=['site_title'=>'Site başlığı','brand'=>'Üst başlık','hero_title'=>'Ana manşet','phone'=>'Telefon görünümü','phone_link'=>'Telefon bağlantısı','email'=>'E-posta','address'=>'Adres','contact_title'=>'İletişim başlığı','footer_text'=>'Alt bilgi'];
+$ok=false;if($_SERVER['REQUEST_METHOD']==='POST'){verify_csrf();$s=db()->prepare('INSERT INTO settings(setting_key,setting_value) VALUES(?,?) ON DUPLICATE KEY UPDATE setting_value=VALUES(setting_value)');foreach($fields as $k=>$label)$s->execute([$k,trim($_POST[$k]??'')]);$ok=true;}
+$pageTitle='Site Ayarları';$activeMenu='settings';require __DIR__.'/_header.php';
+?><div class="page-head"><div><h1>Site Ayarları</h1><p>Genel site içeriklerini düzenle</p></div></div><section class="card form-card"><?php if($ok):?><p class="success">Değişiklikler kaydedildi.</p><?php endif?><form method="post"><input type="hidden" name="csrf" value="<?=csrf()?>"><div class="form-grid"><?php foreach($fields as $key=>$label):?><label><?=e($label)?><textarea name="<?=e($key)?>" rows="2"><?=e(setting($key))?></textarea></label><?php endforeach?></div><button>Değişiklikleri Kaydet</button></form></section><?php require __DIR__.'/_footer.php';?>

@@ -1,7 +1,19 @@
 <?php
 require __DIR__.'/../inc/bootstrap.php'; admin_required();
-$fields=['site_title'=>'Site başlığı','brand'=>'Üst başlık','hero_title'=>'Ana manşet','phone'=>'Telefon görünümü','phone_link'=>'Telefon bağlantısı','email'=>'E-posta','address'=>'Adres','contact_title'=>'İletişim başlığı','footer_text'=>'Alt bilgi'];
-$ok=false;
-if($_SERVER['REQUEST_METHOD']==='POST'){verify_csrf();$s=db()->prepare('INSERT INTO settings(setting_key,setting_value) VALUES(?,?) ON DUPLICATE KEY UPDATE setting_value=VALUES(setting_value)');foreach($fields as $k=>$label)$s->execute([$k,trim($_POST[$k]??'')]);$ok=true;}
-$messages=db()->query('SELECT * FROM messages ORDER BY created_at DESC LIMIT 100')->fetchAll();
-?><!doctype html><html lang="tr"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Kirpisoft CMS</title><link rel="stylesheet" href="admin.css"><body><header><b>Kirpisoft CMS</b><nav><a href="reports.php">Raporlar</a><a href="../index.php" target="_blank">Siteyi aç</a><a href="logout.php">Çıkış</a></nav></header><main class="panel"><section class="card"><h1>Site ayarları</h1><?php if($ok):?><p class="success">Değişiklikler kaydedildi.</p><?php endif?><form method="post"><input type="hidden" name="csrf" value="<?=csrf()?>"><?php foreach($fields as $key=>$label):?><label><?=e($label)?><textarea name="<?=e($key)?>" rows="2"><?=e(setting($key))?></textarea></label><?php endforeach?><button>Kaydet</button></form></section><section class="card wide"><h2>İletişim mesajları</h2><?php if(!$messages):?><p>Henüz mesaj yok.</p><?php endif?><?php foreach($messages as $m):?><article><strong><?=e($m['name'])?></strong> · <a href="mailto:<?=e($m['email'])?>"><?=e($m['email'])?></a><small><?=e($m['created_at'])?></small><h3><?=e($m['subject'])?></h3><p><?=nl2br(e($m['message']))?></p></article><?php endforeach?></section></main></body></html>
+ensure_visits_table(); ensure_pages_table();
+$stats=[
+ 'online'=>(int)db()->query("SELECT COUNT(DISTINCT visitor_id) FROM visits WHERE visited_at >= (NOW() - INTERVAL 5 MINUTE)")->fetchColumn(),
+ 'today'=>(int)db()->query('SELECT COUNT(*) FROM visits WHERE visited_at >= CURDATE()')->fetchColumn(),
+ 'messages'=>(int)db()->query('SELECT COUNT(*) FROM messages WHERE is_read=0')->fetchColumn(),
+];
+$recent=db()->query('SELECT ip_address,country,page,visited_at FROM visits ORDER BY id DESC LIMIT 5')->fetchAll();
+$pageTitle='Ana Sayfa'; $activeMenu='dashboard'; require __DIR__.'/_header.php';
+?>
+<div class="page-head"><div><h1>Hoş geldin, Yönetici</h1><p>Sitenin bugünkü özeti</p></div><a class="btn secondary" href="../index.php" target="_blank">Siteyi Aç</a></div>
+<section class="stats">
+ <article class="card stat online"><span>Şu anda içeride</span><strong><?=number_format($stats['online'],0,',','.')?></strong><small>Son 5 dakika</small></article>
+ <article class="card stat"><span>Bugünkü ziyaret</span><strong><?=number_format($stats['today'],0,',','.')?></strong><small>Sayfa görüntülenmesi</small></article>
+ <article class="card stat"><span>Yeni mesaj</span><strong><?=number_format($stats['messages'],0,',','.')?></strong><small>Okunmamış mesaj</small></article>
+</section>
+<div class="dashboard-grid"><section class="card"><div class="section-head"><h2>Son hareketler</h2><a href="reports.php">Tümünü gör</a></div><?php if(!$recent):?><p>Henüz hareket yok.</p><?php endif?><div class="activity"><?php foreach($recent as $row):?><div><span class="activity-icon">●</span><p><strong><?=e($row['ip_address'])?></strong><small><?=e($row['country'].' · '.$row['page'])?></small></p><time><?=e($row['visited_at'])?></time></div><?php endforeach?></div></section><aside class="card"><h2>Hızlı işlemler</h2><div class="quick"><a class="btn" href="settings.php">Siteyi Düzenle</a><a class="btn secondary" href="messages.php">Mesajları Aç</a><a class="btn secondary" href="reports.php">Raporlara Git</a><a class="btn secondary" href="page-edit.php">Yeni Sayfa Ekle</a></div></aside></div>
+<?php require __DIR__.'/_footer.php'; ?>

@@ -1,0 +1,3 @@
+<?php
+require __DIR__.'/inc/bootstrap.php';ensure_pages_table();$slug=trim($_GET['slug']??'');$s=db()->prepare('SELECT * FROM pages WHERE slug=? AND is_published=1');$s->execute([$slug]);$page=$s->fetch();if(!$page){http_response_code(404);exit('Sayfa bulunamadı.');}track_visit($page['title']);
+?><!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title><?=e($page['title'])?> - <?=e(setting('brand','Kirpisoft'))?></title><link rel="stylesheet" href="assets/css/main.css"></head><body><main style="max-width:900px;margin:60px auto;padding:24px"><p><a href="index.php">← Ana Sayfa</a></p><h1><?=e($page['title'])?></h1><div><?=nl2br(e($page['content']))?></div></main></body></html>

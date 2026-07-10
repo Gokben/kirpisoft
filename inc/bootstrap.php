@@ -36,6 +36,9 @@ function admin_required(): void {
 function ensure_visits_table(): void {
     db()->exec("CREATE TABLE IF NOT EXISTS visits (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, visitor_id VARCHAR(64) NOT NULL, ip_address VARCHAR(45) NOT NULL, country VARCHAR(100) NOT NULL DEFAULT 'Bilinmiyor', page VARCHAR(255) NOT NULL, user_agent VARCHAR(500) NOT NULL DEFAULT '', visited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, INDEX idx_visited_at (visited_at), INDEX idx_ip_address (ip_address), INDEX idx_country (country)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
 }
+function ensure_pages_table(): void {
+    db()->exec("CREATE TABLE IF NOT EXISTS pages (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, title VARCHAR(190) NOT NULL, slug VARCHAR(190) NOT NULL UNIQUE, content MEDIUMTEXT NOT NULL, is_published TINYINT(1) NOT NULL DEFAULT 1, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+}
 function country_name(string $code): string {
     $code = strtoupper($code);
     $names = ['TR'=>'Türkiye','DE'=>'Almanya','US'=>'Amerika Birleşik Devletleri','GB'=>'Birleşik Krallık','FR'=>'Fransa','NL'=>'Hollanda','BE'=>'Belçika','AT'=>'Avusturya','CH'=>'İsviçre','AZ'=>'Azerbaycan','CY'=>'Kıbrıs','RU'=>'Rusya','UA'=>'Ukrayna','BG'=>'Bulgaristan','GR'=>'Yunanistan','IT'=>'İtalya','ES'=>'İspanya','CA'=>'Kanada','AU'=>'Avustralya'];
